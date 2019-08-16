@@ -1,0 +1,18 @@
+#include <stdio.h>
+extern int max(int, int);//调用外部函数时，则必须在声明时加上“extern”
+extern int kk;//引用式声明
+static void gccx(void);//内部函数，又称为静态函数
+int main()
+{
+	int a,b;    //自动变量，无链接，块作用域
+	gccx();
+	printf("kk = %d\n", kk);
+	printf("输入2个整数：");
+	scanf("%d %d", &a, &b);
+	printf("最大值是: %d", max(a, b));//调用外部函数-来自其它翻译单元（文件）
+	return 0;
+}
+static void gccx(void)
+{
+	printf("内部函数\n");
+}

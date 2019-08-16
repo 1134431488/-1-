@@ -1,0 +1,5 @@
+#include "·­Òëµ¥Ôª.c"
+int main(void)
+{
+	printf("%d", cc);
+}
